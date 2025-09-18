@@ -5,7 +5,7 @@ import subprocess
 BOT_TOKEN = "8368814819:AAHAN1mxeKFe4_jSqF7GQsr_nnX2H5tejDs"
 CHAT_ID = "830229958"
 URL = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
-HOST_TO_CHECK = "ahmedhome.duckdns.org"
+HOST_TO_CHECK = "hamody.ddns.net"
 
 
 def send_message(msg):
@@ -36,3 +36,4 @@ while True:
     last_state = online
 
     time.sleep(5)
+
