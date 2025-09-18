@@ -5,6 +5,8 @@ import subprocess
 BOT_TOKEN = "8368814819:AAHAN1mxeKFe4_jSqF7GQsr_nnX2H5tejDs"
 CHAT_ID = "830229958"
 URL = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+HOST_TO_CHECK = "ahmedhome.duckdns.org"
+
 
 def send_message(msg):
     try:
@@ -15,7 +17,7 @@ def send_message(msg):
 
 def is_online():
     try:
-        result = subprocess.run(["ping", "-c", "1", "8.8.8.8"], stdout=subprocess.PIPE)
+        result = subprocess.run(["ping", "-c", "1", HOST_TO_CHECK], stdout=subprocess.PIPE)
         return result.returncode == 0
     except Exception:
         return False
@@ -32,4 +34,5 @@ while True:
         send_message("✅ النت رجع!")
 
     last_state = online
+
     time.sleep(5)
